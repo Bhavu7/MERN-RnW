@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 100;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* font-family: "Roboto", sans-serif, serif; */
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Documentation (fixed Button) */
+
+.documentation {
+    background-color: rgb(3, 169, 244);
+    position: fixed;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 66px;
+    left: 52px;
+    cursor: pointer;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    transition: ease-in-out 0.3s;
+}
+
+.documentation i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.documentation:hover {
+    background-color: #03a8f4d0;
+    transition: ease-in-out 0.3s;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+
+header {
+    background: url('img/banner.jpg');
+    /* background-position: center; */
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+}
+
+/* Navbar */
+
+nav {
+    padding: 25px 25px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+nav .logo img {
+    height: 38px;
+    width: auto;
+    /* margin-left: 270px; */
+    margin-left: 210px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(134, 147, 158);
+    font-size: 13px;
+}
+
+nav ul li a #shop {
+    margin-right: 10px;
+    background-color: transparent !important;
+    color: rgb(134, 147, 158);
+    /* margin-left: -15px; */
+}
+
+nav ul li a i {
+    margin-left: 7px;
+    font-size: 10px;
+}
+
+nav ul li a:hover {
+    color: #03a9f4;
+    transition: ease-in-out 0.3s;
+}
+
+nav ul li a span {
+    color: #ffffffd9;
+    background-color: #ED5564;
+    font-size: 10px;
+    padding: 4px 7px;
+    margin-left: 7px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    transition: ease-in-out 0.3s;
+}
+
+nav ul li a span:hover {
+    background-color: #ed5564da;
+    transition: ease-in-out 0.3s;
+}
+
+.nav-links {
+    display: flex;
+    /* margin-right: 280px; */
+    margin-right: 220px;
+}
+
+nav input[type="button"] {
+    padding: 10px 20px;
+    width: 90px;
+    font-size: 13px;
+    background-color: #03a9f4;
+    color: #f4f4f4;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    transition: ease-in-out 0.3s;
+}
+
+nav input[type="button"]:hover {
+    background-color: #03a8f4d0;
+    transition: ease-in-out 0.3s;
+    /* box-shadow: 0px 0px 5px 0px #0000001f; */
+}
+
+/* Header Section Text */
+
+header .hero-text {
+    text-align: center;
+    margin-top: 50px;
+    color: #fff;
+}
+
+header .hero-text p {
+    font-size: 40px;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+header .hero-text span {
+    font-weight: 300;
+    margin-top: 20px;
+    font-weight: 100;
+}
+
+/* Main Container */
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.main-container .grid-container {
+    background-color: #ffffff;
+    height: fit-content;
+    width: 70%;
+    position: absolute;
+    top: 830px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 5px 0px #0000001f; */
+}
+
+/* Grid Items(Cards) */
+
+.grid-container .grid-items {
+    background: transparent !important;
+    display: grid;
+    grid-template-columns: repeat(4);
+    box-shadow: 0px 0px 5px 0px #0000001f;
+    border: none;
+}
+
+.grid-container .grid-items i:hover {
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+
+.grid-container .grid-items .grid-item1 {
+    grid-column: 1/2;
+    background-color: #fff;
+    padding: 25px 0px;
+    text-align: center;
+    -webkit-border-radius: 5px 0px 0px 5px;
+    -moz-border-radius: 5px 0px 0px 5px;
+    -ms-border-radius: 5px 0px 0px 5px;
+    -o-border-radius: 5px 0px 0px 5px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    margin-right: -30px;
+}
+
+.grid-container .grid-items .grid-item1 i {
+    font-size: 35px;
+    color: rgb(134, 147, 158);
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .grid-items .grid-item1 p {
+    font-size: 16px;
+    margin-top: 40px;
+    color: rgb(134, 147, 158);
+}
+
+.grid-container .grid-items .grid-item2 {
+    grid-column: 2/3;
+    background-color: #fff;
+    padding: 25px 0px;
+    text-align: center;
+    border: none;
+    margin-right: -45px;
+}
+
+.grid-container .grid-items .item2 {
+    background-color: #f6f6f6;
+    border: none;
+}
+
+.grid-container .grid-items .grid-item2 i {
+    font-size: 35px;
+    color: rgb(134, 147, 158);
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .grid-items .grid-item2 p {
+    font-size: 16px;
+    margin-top: 40px;
+    color: rgb(134, 147, 158);
+}
+
+.grid-container .grid-items .grid-item3 {
+    grid-column: 3/4;
+    background-color: #fff;
+    padding: 25px 0px;
+    text-align: center;
+    border: none;
+}
+
+.grid-container .grid-items .grid-item3 i {
+    font-size: 35px;
+    color: rgb(134, 147, 158);
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .grid-items .grid-item3 p {
+    font-size: 16px;
+    margin-top: 40px;
+    color: rgb(134, 147, 158);
+}
+
+.grid-container .grid-items .item4 {
+    grid-column: 4/5;
+    background-color: #ffffff;
+    padding: 0px 15px 0px 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    -webkit-border-radius: 0px 5px 5px 0px;
+    -moz-border-radius: 0px 5px 5px 0px;
+    -ms-border-radius: 0px 5px 5px 0px;
+    -o-border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+}
+
+.grid-container .grid-items .grid-item4 button {
+    background-color: #03a9f4;
+    color: #fff;
+    width: 100%;
+    height: 80px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .grid-items .grid-item4 button:hover {
+    background-color: #03a9f4da;
+    transition: ease-in-out 0.3s;
+    /* box-shadow: 1px 1px 10px 1px #0000001f; */
+}
+
+/* Gallery Grid View */
+
+.grid-container .items-gallery {
+    display: grid;
+    grid-template-columns: repeat(4);
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.grid-container .items-gallery .grid-item1 {
+    grid-column: 1/2;
+    height: 353px;
+    background-image: url('https://images.pexels.com/photos/31793390/pexels-photo-31793390/free-photo-of-vibrant-flamingos-feeding-in-madeira-park.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-size: cover;
+    padding: 25px 0px;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .items-gallery .grid-item2 {
+    grid-column: 2/3;
+    height: 400px;
+    background-image: url('https://images.pexels.com/photos/31781189/pexels-photo-31781189/free-photo-of-bright-orange-lighthouse-against-snowy-mountains.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-size: cover;
+    padding: 25px 0px;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .items-gallery .grid-item3 {
+    grid-column: 3/4;
+    height: 353px;
+    background-image: url('https://images.pexels.com/photos/31857463/pexels-photo-31857463/free-photo-of-father-and-child-playing-outdoors-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-size: cover;
+    padding: 25px 0px;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .items-gallery .grid-item4 {
+    grid-column: 4/5;
+    height: 400px;
+    background-image: url('https://images.pexels.com/photos/31812002/pexels-photo-31812002/free-photo-of-majestic-city-clock-tower-on-an-overcast-day.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-size: cover;
+    padding: 25px 0px;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .items-gallery .grid-item5 {
+    grid-column: 1/2;
+    margin-top: -45px;
+    height: 353px;
+    background-image: url('https://images.pexels.com/photos/30036971/pexels-photo-30036971/free-photo-of-charming-alleyway-in-savona-liguria-italy.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-size: cover;
+    padding: 25px 0px;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .items-gallery .grid-item6 {
+    grid-column: 2/3;
+    height: 400px;
+    background-image: url('https://images.pexels.com/photos/30939285/pexels-photo-30939285/free-photo-of-woman-posing-by-modern-urban-window.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-size: cover;
+    padding: 25px 0px;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .items-gallery .grid-item7 {
+    grid-column: 3/4;
+    height: 353px;
+    margin-top: -45px;
+    background-image: url('https://images.pexels.com/photos/30890360/pexels-photo-30890360/free-photo-of-vintage-orange-car-on-paris-street-at-dusk.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-size: cover;
+    padding: 25px 0px;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+}
+
+.grid-container .items-gallery .grid-item8 {
+    grid-column: 4/5;
+    height: 400px;
+    background-image: url('https://images.pexels.com/photos/6906441/pexels-photo-6906441.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+    background-position: center;
+    background-size: cover;
+    padding: 25px 0px;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+}
+
+#item-hover:hover {
+    background-color: #ffffff;
+    opacity: 85%;
+    box-shadow: 0px 0px 5px 0px #0000001f;
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.02);
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}

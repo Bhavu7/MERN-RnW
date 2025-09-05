@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Grid Layout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      .card-img-top {
+        height: 150px;
+        object-fit: cover;
+      }
+      .card {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container text-center my-4">
+      <h1 class="mb-4">Responsive Image Grid</h1>
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-8">
+          <div class="card">
+            <img src="assets/image1.jpeg" class="card-img-top" alt="Mountain" />
+            <div class="card-body">
+              <h5 class="card-title">Mountain View</h5>
+              <p class="card-text">
+                Explore the majestic peaks and serene valleys of the mountains.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-12 col-md-4 offset-md-0">
+          <div class="card">
+            <img src="assets/image2.jpeg" class="card-img-top" alt="Ocean" />
+            <div class="card-body">
+              <h5 class="card-title">Ocean Breeze</h5>
+              <p class="card-text">Enjoy the sounds of ocean waves.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="row">
+        <div class="col-6 col-md-4">
+          <div class="card">
+            <img src="assets/image3.jpeg" class="card-img-top" alt="Forest" />
+            <div class="card-body">
+              <h5 class="card-title">Forest Escape</h5>
+              <p class="card-text">
+                Discover the tranquility of green forests.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-6 col-md-4 offset-md-0">
+          <div class="card">
+            <img src="assets/image4.jpeg" class="card-img-top" alt="Desert" />
+            <div class="card-body">
+              <h5 class="card-title">Desert Sands</h5>
+              <p class="card-text">Explore the golden desert landscapes.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col-12 col-md-4 offset-md-0">
+          <div class="card">
+            <img src="assets/image5.jpeg" class="card-img-top" alt="Lake" />
+            <div class="card-body">
+              <h5 class="card-title">Lake Serenity</h5>
+              <p class="card-text">
+                Relax by the calm waters of a picturesque lake.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="row">
+        <div class="col-6 offset-0">
+          <div class="card">
+            <img src="assets/image6.jpeg" class="card-img-top" alt="Sunset" />
+            <div class="card-body">
+              <h5 class="card-title">Sunset Glow</h5>
+              <p class="card-text">
+                Witness the stunning colors of a peaceful sunset.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 7 -->
+        <div class="col-6 offset-0">
+          <div class="card">
+            <img
+              src="assets/image7.jpeg"
+              class="card-img-top"
+              alt="Landscape"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Rolling Hills</h5>
+              <p class="card-text">
+                Enjoy the gentle slopes and scenic beauty of rolling hills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

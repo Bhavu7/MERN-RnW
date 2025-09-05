@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="#" class="logo">SimpleNav</a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+          </li>
+
+          <!-- Dropdown Menu For Products -->
+          <li class="nav-item">
+            <a href="#" class="nav-link arrow-down">Products</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Featured Items</a></li>
+              <li><a href="#" class="dropdown-item">New Arrivals</a></li>
+
+              <!-- Sub Menu For Categories -->
+              <li class="dropdown-submenu">
+                <a href="#" class="dropdown-item arrow-right">Categories</a>
+                <ul class="submenu">
+                  <li><a href="#" class="dropdown-item">Electronics</a></li>
+                  <li><a href="#" class="dropdown-item">Clothing</a></li>
+                  <li><a href="#" class="dropdown-item">Home Goods</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="dropdown-item">Sale</a></li>
+            </ul>
+          </li>
+          <!-- Dropdown Menu For Services -->
+          <li class="nav-item">
+            <a href="#" class="nav-link arrow-down">Services</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Consulting</a></li>
+              <li><a href="#" class="dropdown-item">Web Design</a></li>
+
+              <!-- Sub Menu For Support -->
+              <li class="dropdown-submenu">
+                <a href="#" class="dropdown-item arrow-right">Support</a>
+                <ul class="submenu">
+                  <li><a href="#" class="dropdown-item">Help Center</a></li>
+                  <li><a href="#" class="dropdown-item">Tickets</a></li>
+                  <li><a href="#" class="dropdown-item">Live Chat</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <button class="hamburger">☰</button>
+      </div>
+    </nav>
+  </body>
+</html>

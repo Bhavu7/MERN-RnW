@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .box {
+            height: 200px;
+            width: 100%;
+            background-color: aquamarine;
+            border-radius: 10px;
+        }
+        
+        #box1 {
+            width: 100%;
+            background-color: red;
+        }
+
+        #box2 {
+            width: 32%;
+            margin: 5px;
+            background-color: blue;
+        }
+
+        #box3 {
+            width: 24%;
+            margin: 5px;
+            background-color: green;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            #box1 {
+                width: 100%;
+            }
+
+            #box2 {
+                width: 100%;
+            }
+
+            #box3 {
+                width: 350px;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            #box2 {
+                width: 100%;
+            }
+
+            #box3 {
+                width: 100%;
+            }
+        }
+
+        /* @media screen and (min-width: 768px) {
+            .box {
+                width: 100%;
+            }
+
+            #box1 {
+                width: 100%;
+            }
+
+            #box2 {
+                width: 760px;
+            }
+            #box3 {
+                width: 760px;
+            }
+        }
+
+        @media screen and (min-width: 425px) {
+            #box3 {
+                width: 350px;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <main>
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box3"></div>
+    </main>
+</body>
+</html>

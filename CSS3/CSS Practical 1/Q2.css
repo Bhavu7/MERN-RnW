@@ -1,0 +1,141 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font & Background */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #111;
+  /* padding: 10px 20px; */
+}
+
+.navbar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Logo */
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #eee;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #8f89ff;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #222;
+  border-radius: 8px;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  list-style: none;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #333;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #ccc;
+}
+
+.dropdown-menu a:hover {
+  background-color: #333;
+  color: #8f89ff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.login-btn {
+  color: #e2e8f0;
+  border: 1px solid #94a3b8;
+  background: transparent;
+}
+
+.login-btn:hover {
+  border-color: #6366f1;
+  color: #6366f1;
+}
+
+.signup-btn {
+  background-color: #6366f1;
+  color: #fff;
+  border: none;
+}
+
+.signup-btn:hover {
+  background-color: #4f46e5;
+}

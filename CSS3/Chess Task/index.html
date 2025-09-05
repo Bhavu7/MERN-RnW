@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Board</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      /* Chessboard */
+      .chessboard {
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        width: 480px;
+        border: 2px solid black;
+      }
+
+      /* Squares Styling */
+      .square {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+      }
+
+      /* White squares */
+      .white {
+        background-color: white;
+      }
+
+      /* Black squares */
+      .black {
+        background-color: black;
+        color: white;
+      }
+
+      /* Icon's hover effect */
+      .square i:hover {
+        color: rgb(135, 135, 135);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chessboard">
+      <!-- Chessboard (Line 1) -->
+      <div class="square black"><i class="fas fa-chess-rook"></i></div>
+      <div class="square white"><i class="fas fa-chess-knight"></i></div>
+      <div class="square black"><i class="fas fa-chess-bishop"></i></div>
+      <div class="square white"><i class="fas fa-chess-queen"></i></div>
+      <div class="square black"><i class="fas fa-chess-king"></i></div>
+      <div class="square white"><i class="fas fa-chess-bishop"></i></div>
+      <div class="square black"><i class="fas fa-chess-knight"></i></div>
+      <div class="square white"><i class="fas fa-chess-rook"></i></div>
+
+      <!-- Pawns row (Line 2) -->
+      <div class="square white"><i class="fas fa-chess-pawn"></i></div>
+      <div class="square black"><i class="fas fa-chess-pawn"></i></div>
+      <div class="square white"><i class="fas fa-chess-pawn"></i></div>
+      <div class="square black"><i class="fas fa-chess-pawn"></i></div>
+      <div class="square white"><i class="fas fa-chess-pawn"></i></div>
+      <div class="square black"><i class="fas fa-chess-pawn"></i></div>
+      <div class="square white"><i class="fas fa-chess-pawn"></i></div>
+      <div class="square black"><i class="fas fa-chess-pawn"></i></div>
+
+      <!-- Empty squares (Line 3) -->
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+
+      <!-- (Line 4) -->
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+
+      <!-- (Line 5) -->
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+
+      <!-- (Line 6) -->
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+      <div class="square white"></div>
+      <div class="square black"></div>
+
+      <!-- Pawns row (Line 7) -->
+      <div class="square black">
+        <i class="fas fa-chess-pawn"></i>
+      </div>
+      <div class="square white">
+        <i class="fas fa-chess-pawn"></i>
+      </div>
+      <div class="square black">
+        <i class="fas fa-chess-pawn"></i>
+      </div>
+      <div class="square white">
+        <i class="fas fa-chess-pawn"></i>
+      </div>
+      <div class="square black">
+        <i class="fas fa-chess-pawn"></i>
+      </div>
+      <div class="square white">
+        <i class="fas fa-chess-pawn"></i>
+      </div>
+      <div class="square black">
+        <i class="fas fa-chess-pawn"></i>
+      </div>
+      <div class="square white">
+        <i class="fas fa-chess-pawn"></i>
+      </div>
+
+      <!-- Last Row (Line 8) -->
+      <div class="square white">
+        <i class="fas fa-chess-rook"></i>
+      </div>
+      <div class="square black">
+        <i class="fas fa-chess-knight"></i>
+      </div>
+      <div class="square white">
+        <i class="fas fa-chess-bishop"></i>
+      </div>
+      <div class="square black">
+        <i class="fas fa-chess-queen"></i>
+      </div>
+      <div class="square white">
+        <i class="fas fa-chess-king"></i>
+      </div>
+      <div class="square black">
+        <i class="fas fa-chess-bishop"></i>
+      </div>
+      <div class="square white">
+        <i class="fas fa-chess-knight"></i>
+      </div>
+      <div class="square black">
+        <i class="fas fa-chess-rook"></i>
+      </div>
+    </div>
+  </body>
+</html>

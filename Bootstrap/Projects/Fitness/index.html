@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitZone - Transform Your Life</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-color: #6366f1;
+        --primary-dark: #4f46e5;
+        --secondary-color: #f59e0b;
+        --accent-color: #10b981;
+        --dark-bg: #111827;
+        --dark-surface: #1f2937;
+        --text-light: #f9fafb;
+        --text-muted: #6b7280;
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #374151;
+        overflow-x: hidden;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .hero-content h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-content p {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2rem;
+        max-width: 600px;
+      }
+
+      .btn-primary-custom {
+        background: var(--gradient-primary);
+        border: none;
+        padding: 15px 40px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-primary-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        color: white;
+      }
+
+      .btn-outline-custom {
+        border: 2px solid white;
+        color: white;
+        padding: 15px 40px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        background: transparent;
+        margin-left: 1rem;
+      }
+
+      .btn-outline-custom:hover {
+        background: white;
+        color: var(--primary-color);
+        transform: translateY(-3px);
+      }
+
+      /* Navigation */
+      .navbar-custom {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand {
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: var(--primary-color) !important;
+      }
+
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        color: #374151 !important;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
+
+      /* Services Section */
+      .services-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s ease;
+        border: none;
+        height: 100%;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        color: white;
+        font-size: 2rem;
+      }
+
+      .service-card h4 {
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #1f2937;
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* About Section */
+      .about-section {
+        padding: 100px 0;
+      }
+
+      .about-image {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .about-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .section-title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #1f2937;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .feature-list li {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .feature-list li i {
+        color: var(--accent-color);
+        margin-right: 15px;
+        font-size: 1.2rem;
+      }
+
+      /* Trainers Section */
+      .trainers-section {
+        padding: 100px 0;
+        background: var(--dark-bg);
+        color: var(--text-light);
+      }
+
+      .trainer-card {
+        background: var(--dark-surface);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s ease;
+      }
+
+      .trainer-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .trainer-image {
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .trainer-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .trainer-card:hover .trainer-image img {
+        transform: scale(1.1);
+      }
+
+      .trainer-info {
+        padding: 30px;
+        text-align: center;
+      }
+
+      .trainer-info h5 {
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--text-light);
+      }
+
+      .trainer-specialty {
+        color: var(--secondary-color);
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: var(--primary-dark);
+        transform: translateY(-3px);
+      }
+
+      /* Pricing Section */
+      .pricing-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      }
+
+      .pricing-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing-card.featured {
+        transform: scale(1.05);
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+      }
+
+      .pricing-card.featured::before {
+        content: "MOST POPULAR";
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background: var(--secondary-color);
+        color: white;
+        padding: 5px 40px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        transform: rotate(45deg);
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .pricing-card.featured:hover {
+        transform: scale(1.05) translateY(-10px);
+      }
+
+      .price {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 20px 0;
+      }
+
+      .price span {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--text-muted);
+      }
+
+      .pricing-card.featured .price span {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .pricing-features {
+        list-style: none;
+        padding: 0;
+        margin: 30px 0;
+      }
+
+      .pricing-features li {
+        padding: 10px 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .pricing-card.featured .pricing-features li {
+        border-bottom-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        padding: 100px 0;
+        background: var(--dark-bg);
+        color: var(--text-light);
+      }
+
+      .contact-form {
+        background: var(--dark-surface);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .form-control {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 15px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .form-control:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.25);
+        color: white;
+      }
+
+      .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .contact-info {
+        padding: 40px 0;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .contact-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      .contact-details h6 {
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .contact-details p {
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      /* Footer */
+      .footer {
+        background: #000;
+        color: var(--text-light);
+        padding: 60px 0 30px;
+      }
+
+      .footer h5 {
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: white;
+      }
+
+      .footer a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .footer a:hover {
+        color: var(--primary-color);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #374151;
+        margin-top: 40px;
+        padding-top: 30px;
+        text-align: center;
+        color: var(--text-muted);
+      }
+
+      .social-links a {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .social-links i {
+        color: white;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+        }
+
+        .btn-outline-custom {
+          margin-left: 0;
+          margin-top: 1rem;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .pricing-card.featured {
+          transform: none;
+          margin-top: 20px;
+        }
+
+        .hero-section {
+          background-attachment: scroll;
+        }
+      }
+
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <i class="fas fa-dumbbell me-2"></i>FitZone
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#trainers">Trainers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="hero-content">
+              <h1>Transform Your Life</h1>
+              <p>
+                Join thousands of people who have already transformed their
+                lives through our comprehensive fitness programs. Start your
+                journey to a healthier, stronger you today.
+              </p>
+              <a href="#contact" class="btn-primary-custom"
+                >Start Your Journey</a
+              >
+              <a href="#about" class="btn-outline-custom">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="section-title">Our Services</h2>
+            <p class="lead">
+              Comprehensive fitness solutions tailored to your goals
+            </p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <h4>Personal Training</h4>
+              <p>
+                One-on-one sessions with certified trainers who will create
+                personalized workout plans based on your fitness goals and
+                current fitness level.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h4>Group Classes</h4>
+              <p>
+                Join our energetic group fitness classes including HIIT, Yoga,
+                Pilates, Zumba, and more. Perfect for motivation and community
+                building.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-apple-alt"></i>
+              </div>
+              <h4>Nutrition Coaching</h4>
+              <p>
+                Get personalized meal plans and nutrition guidance from our
+                certified nutritionists to complement your fitness journey.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <h4>Health Assessments</h4>
+              <p>
+                Comprehensive health and fitness assessments to track your
+                progress and optimize your training programs.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h4>Online Training</h4>
+              <p>
+                Access our virtual training sessions and workout programs from
+                anywhere, perfect for busy schedules and home workouts.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-spa"></i>
+              </div>
+              <h4>Recovery & Wellness</h4>
+              <p>
+                Massage therapy, stretching sessions, and wellness programs to
+                help your body recover and perform at its best.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="about-image">
+              <img
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Modern Gym Interior"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h2 class="section-title">Why Choose FitZone?</h2>
+            <p class="lead mb-4">
+              We're more than just a gym - we're your partner in achieving a
+              healthier, stronger, and more confident version of yourself.
+            </p>
+            <p class="mb-4">
+              With over 10 years of experience in the fitness industry, we've
+              helped thousands of people transform their lives through our
+              proven methods and personalized approach.
+            </p>
+
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check-circle"></i> State-of-the-art equipment
+                and facilities
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Certified and experienced
+                trainers
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Flexible membership options
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> 24/7 gym access for premium
+                members
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Free fitness assessments and
+                consultations
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Supportive community
+                environment
+              </li>
+            </ul>
+
+            <a href="#contact" class="btn-primary-custom mt-4"
+              >Join Our Community</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="trainers-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="section-title" style="color: white">
+              Meet Our Expert Trainers
+            </h2>
+            <p class="lead">
+              Certified professionals dedicated to your success
+            </p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="trainer-card">
+              <div class="trainer-image">
+                <img
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Sarah Johnson"
+                />
+              </div>
+              <div class="trainer-info">
+                <h5>Sarah Johnson</h5>
+                <p class="trainer-specialty">Strength & Conditioning</p>
+                <p>
+                  10+ years experience in personal training and strength
+                  coaching. Specializes in functional fitness and athletic
+                  performance.
+                </p>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="trainer-card">
+              <div class="trainer-image">
+                <img
+                  src="https://images.unsplash.com/photo-1594736797933-d0401ba0ad65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Mike Rodriguez"
+                />
+              </div>
+              <div class="trainer-info">
+                <h5>Mike Rodriguez</h5>
+                <p class="trainer-specialty">HIIT & Cardio</p>
+                <p>
+                  Expert in high-intensity interval training and cardiovascular
+                  fitness. Motivational coach with a passion for helping clients
+                  push their limits.
+                </p>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="trainer-card">
+              <div class="trainer-image">
+                <img
+                  src="https://images.unsplash.com/photo-1506629905607-c90a7ad7e19e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Emma Davis"
+                />
+              </div>
+              <div class="trainer-info">
+                <h5>Emma Davis</h5>
+                <p class="trainer-specialty">Yoga & Pilates</p>
+                <p>
+                  Certified yoga instructor and pilates specialist. Focuses on
+                  flexibility, core strength, and mind-body connection for
+                  holistic wellness.
+                </p>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <p class="lead">
+              Flexible membership options to fit your lifestyle and budget
+            </p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card">
+              <h4>Basic</h4>
+              <div class="price">$29<span>/month</span></div>
+              <ul class="pricing-features">
+                <li>Gym access during regular hours</li>
+                <li>Locker room access</li>
+                <li>Basic equipment usage</li>
+                <li>Free fitness assessment</li>
+                <li>Mobile app access</li>
+              </ul>
+              <a href="#contact" class="btn-primary-custom">Get Started</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card featured">
+              <h4>Premium</h4>
+              <div class="price">$59<span>/month</span></div>
+              <ul class="pricing-features">
+                <li>24/7 gym access</li>
+                <li>All group classes included</li>
+                <li>Personal training sessions (2/month)</li>
+                <li>Nutrition consultation</li>
+                <li>Guest passes (4/month)</li>
+                <li>Premium locker rental</li>
+              </ul>
+              <a href="#contact" class="btn-primary-custom">Most Popular</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card">
+              <h4>Elite</h4>
+              <div class="price">$99<span>/month</span></div>
+              <ul class="pricing-features">
+                <li>Everything in Premium</li>
+                <li>Unlimited personal training</li>
+                <li>Recovery & wellness services</li>
+                <li>Priority class booking</li>
+                <li>Unlimited guest passes</li>
+                <li>Personalized meal plans</li>
+              </ul>
+              <a href="#contact" class="btn-primary-custom">Go Elite</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="section-title" style="color: white">Get In Touch</h2>
+            <p class="lead">
+              Ready to start your fitness journey? Contact us today!
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="contact-form">
+              <form>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      placeholder="Your Phone"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-control" required>
+                      <option value="">Select Service</option>
+                      <option value="personal-training">
+                        Personal Training
+                      </option>
+                      <option value="group-classes">Group Classes</option>
+                      <option value="nutrition">Nutrition Coaching</option>
+                      <option value="membership">Membership Info</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <textarea
+                      class="form-control"
+                      rows="5"
+                      placeholder="Tell us about your fitness goals and any questions you have..."
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn-primary-custom">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h6>Visit Us</h6>
+                  <p>123 Fitness Street<br />Health City, HC 12345</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                  <h6>Call Us</h6>
+                  <p>+1 (555) 123-4567<br />Mon-Fri: 6AM-10PM</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h6>Email Us</h6>
+                  <p>info@fitzone.com<br />support@fitzone.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-details">
+                  <h6>Hours</h6>
+                  <p>Mon-Fri: 5AM-11PM<br />Sat-Sun: 6AM-10PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5><i class="fas fa-dumbbell me-2"></i>FitZone</h5>
+            <p class="mb-4">
+              Transform your life with our comprehensive fitness programs. Join
+              thousands who have already started their journey to a healthier,
+              stronger self.
+            </p>
+            <div class="social-links">
+              <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="me-3"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>Quick Links</h5>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#trainers">Trainers</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>Services</h5>
+            <a href="#">Personal Training</a>
+            <a href="#">Group Classes</a>
+            <a href="#">Nutrition Coaching</a>
+            <a href="#">Online Training</a>
+            <a href="#">Health Assessments</a>
+            <a href="#">Recovery & Wellness</a>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>Contact Info</h5>
+            <p>
+              <i class="fas fa-map-marker-alt me-2"></i>123 Fitness Street,
+              Health City, HC 12345
+            </p>
+            <p><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+            <p><i class="fas fa-envelope me-2"></i>info@fitzone.com</p>
+            <p><i class="fas fa-clock me-2"></i>Mon-Fri: 5AM-11PM</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 FitZone. All rights reserved. | Privacy Policy | Terms
+            of Service
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

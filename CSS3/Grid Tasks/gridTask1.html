@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Task 1</title>
+    <style>
+        /* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+.main {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 10px 10px;
+    grid-column: 1/6;
+    grid-row: 1/4;
+}
+
+.child {
+    border: 1px solid #000;
+    background-color: #ba8181;
+    padding: 5px;
+    text-align: center;
+}
+
+.SubGrid1 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    /* gap: 5px 5px; */
+    /* border: 1px solid #000000; */
+}
+
+.SubGrid1 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.SubGrid1 #child2 {
+    grid-column: 2/4;
+    grid-row: 1/2;
+}
+
+.SubGrid1 #child3 {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.SubGrid1 #child4 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.SubGrid1 #child5 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid1 #child6 {
+    grid-column: 2/4;
+    grid-row: 3/4;
+}
+
+/* Sub Grid 2 */
+.SubGrid2 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid2 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.SubGrid2 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+.SubGrid2 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.SubGrid2 #child4 {
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+
+.SubGrid2 #child5 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.SubGrid2 #child6 {
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+
+/* Sub Grid 3 */
+
+.SubGrid3 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid3 #child1 {
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.SubGrid3 #child2 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.SubGrid3 #child3 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.SubGrid3 #child4 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid3 #child5 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.SubGrid3 #child6 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+/* Sub Grid 4 */
+.SubGrid4 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.SubGrid4 #child1 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.SubGrid4 #child2 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.SubGrid4 #child3 {
+    grid-column: 4/6;
+    grid-row: 1/2;
+}
+
+.SubGrid4 #child4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.SubGrid4 #child5 {
+    grid-column: 2/5;
+    grid-row: 2/4;
+}
+
+.SubGrid4 #child6 {
+    grid-column: 5/6;
+    grid-row: 2/3;
+}
+
+.SubGrid4 #child7 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid4 #child8 {
+    grid-column: 5/6;
+    grid-row: 3/4;
+}
+
+.SubGrid4 #child9 {
+    grid-column: 1/3;
+    grid-row: 4/5;
+}
+
+.SubGrid4 #child10 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+
+.SubGrid4 #child11 {
+    grid-column: 4/6;
+    grid-row: 4/5;
+}
+
+/* Sub Grid 5 */
+
+.SubGrid5 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid5 #child1 {
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.SubGrid5 #child2 {
+    grid-column: 3/7;
+    grid-row: 1/3;
+}
+
+.SubGrid5 #child3 {
+    grid-column: 1/3;
+    grid-row: 3/5;
+}
+
+.SubGrid5 #child4 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.SubGrid5 #child5 {
+    grid-column: 4/5;
+    grid-row: 3/4;
+}
+
+.SubGrid5 #child6 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+
+.SubGrid5 #child7 {
+    grid-column: 4/5;
+    grid-row: 4/5;
+}
+
+.SubGrid5 #child8 {
+    grid-column: 5/7;
+    grid-row: 3/5;
+}
+
+.SubGrid5 #child9 {
+    grid-column: 1/5;
+    grid-row: 5/6;
+}
+
+.SubGrid5 #child10 {
+    grid-column: 5/7;
+    grid-row: 5/6;
+}
+
+/* Sub Grid 6 */
+
+.SubGrid6 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid6 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.SubGrid6 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.SubGrid6 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.SubGrid6 #child4 {
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+
+.SubGrid6 #child5 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid6 #child6 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.SubGrid6 #child7 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+/* Sub Grid 7 */
+.SubGrid7 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid7 #child1 {
+    grid-column: 1/7;
+    grid-row: 1/3;
+}
+
+.SubGrid7 #child2 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid7 #child3 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.SubGrid7 #child4 {
+    grid-column: 3/5;
+    grid-row: 3/5;
+}
+
+.SubGrid7 #child5 {
+    grid-column: 5/7;
+    grid-row: 3/5;
+}
+
+.SubGrid7 #child6 {
+    grid-column: 1/3;
+    grid-row: 4/5;
+}
+
+/* Sub Grid 8 */
+
+.SubGrid8 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.SubGrid8 #child1 {
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+.SubGrid8 #child2 {
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+.SubGrid8 #child3 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+
+.SubGrid8 #child4 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid8 #child5 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.SubGrid8 #child6 {
+    grid-column: 2/5;
+    grid-row: 3/5;
+}
+
+/* Sub Grid 9 */
+.SubGrid9 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid9 #child1 {
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+.SubGrid9 #child2 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid9 #child3 {
+    grid-column: 2/3;
+    grid-row: 3/5;
+}
+
+.SubGrid9 #child4 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.SubGrid9 #child5 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.SubGrid9 #child6 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+
+/* Sub Grid 10 */
+
+.SubGrid10 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid10 #child1 {
+    grid-column: 1/3;
+    grid-row: 1/4;
+}
+
+.SubGrid10 #child2 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.SubGrid10 #child3 {
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+.SubGrid10 #child4 {
+    grid-column: 5/6;
+    grid-row: 1/2;
+}
+
+.SubGrid10 #child5 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.SubGrid10 #child6 {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.SubGrid10 #child7 {
+    grid-column: 3/6;
+    grid-row: 2/5;
+}
+
+.SubGrid10 #child8 {
+    grid-column: 1/3;
+    grid-row: 5/7;
+}
+
+.SubGrid10 #child9 {
+    grid-column: 3/5;
+    grid-row: 5/7;
+}
+
+.SubGrid10 #child10 {
+    grid-column: 5/6;
+    grid-row: 5/6;
+}
+
+.SubGrid10 #child11 {
+    grid-column: 5/6;
+    grid-row: 6/7;
+}
+
+/* Sub Grid 11 */
+
+.SubGrid11 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid11 #child1 {
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+.SubGrid11 #child2 {
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+.SubGrid11 #child3 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+
+.SubGrid11 #child4 {
+    grid-column: 5/7;
+    grid-row: 1/3;
+}
+
+.SubGrid11 #child5 {
+    grid-column: 1/3;
+    grid-row: 3/5;
+}
+
+.SubGrid11 #child6 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.SubGrid11 #child7 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+
+.SubGrid11 #child8 {
+    grid-column: 4/7;
+    grid-row: 3/5;
+}
+
+.SubGrid11 #child9 {
+    grid-column: 1/4;
+    grid-row: 5/7;
+}
+
+.SubGrid11 #child10 {
+    grid-column: 4/5;
+    grid-row: 5/6;
+}
+
+.SubGrid11 #child11 {
+    grid-column: 4/5;
+    grid-row: 6/7;
+}
+
+.SubGrid11 #child12 {
+    grid-column: 5/7;
+    grid-row: 5/7;
+}
+
+/* Sub Grid 12 */
+
+.SubGrid12 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+.SubGrid12 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.SubGrid12 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.SubGrid12 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+.SubGrid12 #child4 {
+    grid-column: 1/4;
+    grid-row: 2/6;
+}
+.SubGrid12 #child5 {
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+.SubGrid12 #child6 {
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+.SubGrid12 #child7 {
+    grid-column: 3/4;
+    grid-row: 6/7;
+}
+
+/* Sub Grid 13 */
+
+.SubGrid13 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid13 #child1 {
+    grid-column: 1/6;
+    grid-row: 1/5;
+}
+.SubGrid13 #child2 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+.SubGrid13 #child3 {
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+.SubGrid13 #child4 {
+    grid-column: 3/4;
+    grid-row: 5/6;
+}
+.SubGrid13 #child5 {
+    grid-column: 4/5;
+    grid-row: 5/6;
+}
+.SubGrid13 #child6 {
+    grid-column: 5/6;
+    grid-row: 5/6;
+}
+
+/* Sub Grid 14 */
+
+.SubGrid14 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+.SubGrid14 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.SubGrid14 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.SubGrid14 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+.SubGrid14 #child4 {
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+.SubGrid14 #child5 {
+    grid-column: 5/6;
+    grid-row: 1/2;
+}
+
+/* Sub Grid 15 */
+
+.SubGrid15 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid15 #child1 {
+    grid-column: 1/6;
+    grid-row: 1/2;
+}
+.SubGrid15 #child2 {
+    grid-column: 1/6;
+    grid-row: 2/3;
+}
+.SubGrid15 #child3 {
+    grid-column: 1/6;
+    grid-row: 3/4;
+}
+.SubGrid15 #child4 {
+    grid-column: 1/6;
+    grid-row: 4/5;
+}
+.SubGrid15 #child5 {
+    grid-column: 1/6;
+    grid-row: 5/6;
+}
+
+/* Sub Grid 16 */
+
+.SubGrid16 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid16 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.SubGrid16 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.SubGrid16 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/4;
+}
+
+.SubGrid16 #child4 {
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+.SubGrid16 #child5 {
+    grid-column: 1/3;
+    grid-row: 2/4;
+}
+
+.SubGrid16 #child6 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+
+.SubGrid16 #child7 {
+    grid-column: 4/5;
+    grid-row: 3/4;
+}
+
+.SubGrid16 #child8 {
+    grid-column: 1/2;
+    grid-row: 4/7;
+}
+
+.SubGrid16 #child9 {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.SubGrid16 #child10 {
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+
+.SubGrid16 #child11 {
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+
+.SubGrid16 #child12 {
+    grid-column: 3/5;
+    grid-row: 4/7;
+}
+
+/* Sub Grid 17 */
+
+.SubGrid17 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid17 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.SubGrid17 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.SubGrid17 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.SubGrid17 #child4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.SubGrid17 #child5 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.SubGrid17 #child6 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.SubGrid17 #child7 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid17 #child8 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.SubGrid17 #child9 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.SubGrid17 #child10 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+/* Sub Grid 18 */
+
+.SubGrid18 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid18 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.SubGrid18 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.SubGrid18 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.SubGrid18 #child4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.SubGrid18 #child5 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid18 #child6 {
+    grid-column: 2/4;
+    grid-row: 2/4;
+}
+
+.SubGrid18 #child7 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.SubGrid18 #child8 {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.SubGrid18 #child9 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+
+/* Sub Grid 19 */
+
+.SubGrid19 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid19 #child1 {
+    grid-column: 1/5;
+    grid-row: 1/3;
+}
+
+.SubGrid19 #child2 {
+    grid-column: 1/5;
+    grid-row: 3/5;
+}
+
+.SubGrid19 #child3 {
+    grid-column: 1/2;
+    grid-row: 5/7;
+}
+
+.SubGrid19 #child4 {
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+
+.SubGrid19 #child5 {
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+
+.SubGrid19 #child6 {
+    grid-column: 3/4;
+    grid-row: 5/7;
+}
+
+.SubGrid19 #child7 {
+    grid-column: 4/5;
+    grid-row: 5/6;
+}
+
+.SubGrid19 #child8 {
+    grid-column: 4/5;
+    grid-row: 6/7;
+}
+
+/* Sub Grid 20 */
+
+.SubGrid20 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+.SubGrid20 #child1 {
+    grid-column: 1/3;
+    grid-row: 1/5;
+}
+.SubGrid20 #child2 {
+    grid-column: 3/5;
+    grid-row: 1/2;
+}
+.SubGrid20 #child3 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+.SubGrid20 #child4 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+.SubGrid20 #child5 {
+    grid-column: 3/5;
+    grid-row: 3/4;
+}
+.SubGrid20 #child6 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+.SubGrid20 #child7 {
+    grid-column: 4/5;
+    grid-row: 4/5;
+}
+
+/* Sub Grid 21 */
+
+.SubGrid21 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid21 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.SubGrid21 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/4;
+}
+
+.SubGrid21 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/3;
+}
+
+.SubGrid21 #child4 {
+    grid-column: 1/2;
+    grid-row: 3/5;
+}
+
+.SubGrid21 #child5 {
+    grid-column: 3/4;
+    grid-row: 3/5;
+}
+
+.SubGrid21 #child6 {
+    grid-column: 1/2;
+    grid-row: 5/7;
+}
+
+.SubGrid21 #child7 {
+    grid-column: 2/3;
+    grid-row: 4/7;
+}
+
+.SubGrid21 #child8 {
+    grid-column: 3/4;
+    grid-row: 5/7;
+}
+
+/* Sub Grid 22 */
+
+.SubGrid22 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid22 #child1 {
+    grid-column: 1/5;
+    grid-row: 1/5;
+}
+
+.SubGrid22 #child2 {
+    grid-column: 5/7;
+    grid-row: 1/3;
+}
+
+.SubGrid22 #child3 {
+    grid-column: 5/6;
+    grid-row: 3/4;
+}
+
+.SubGrid22 #child4 {
+    grid-column: 6/7;
+    grid-row: 3/4;
+}
+
+.SubGrid22 #child5 {
+    grid-column: 5/6;
+    grid-row: 4/5;
+}
+
+.SubGrid22 #child6 {
+    grid-column: 6/7;
+    grid-row: 4/5;
+}
+
+.SubGrid22 #child7 {
+    grid-column: 1/3;
+    grid-row: 5/7;
+}
+
+.SubGrid22 #child8 {
+    grid-column: 3/4;
+    grid-row: 5/6;
+}
+
+.SubGrid22 #child9 {
+    grid-column: 4/5;
+    grid-row: 5/6;
+}
+
+.SubGrid22 #child10 {
+    grid-column: 3/4;
+    grid-row: 6/7;
+}
+
+.SubGrid22 #child11 {
+    grid-column: 4/5;
+    grid-row: 6/7;
+}
+
+.SubGrid22 #child12 {
+    grid-column: 5/7;
+    grid-row: 5/7;
+}
+
+/* Sub Grid 23 */
+
+.SubGrid23 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.SubGrid23 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.SubGrid23 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.SubGrid23 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.SubGrid23 #child4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.SubGrid23 #child5 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.SubGrid23 #child6 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.SubGrid23 #child7 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.SubGrid23 #child8 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.SubGrid23 #child9 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.SubGrid23 #child10 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+/* Sub Grid 24 */
+
+.SubGrid24 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.SubGrid24 #child1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.SubGrid24 #child2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.SubGrid24 #child3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.SubGrid24 #child4 {
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+
+.SubGrid24 #child5 {
+    grid-column: 2/4;
+    grid-row: 2/6;
+}
+
+.SubGrid24 #child6 {
+    grid-column: 1/2;
+    grid-row: 4/6;
+}
+
+.SubGrid24 #child7 {
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+
+.SubGrid24 #child8 {
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+
+.SubGrid24 #child9 {
+    grid-column: 3/4;
+    grid-row: 6/7;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="SubGrid1">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+        </div>
+        <div class="SubGrid2">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+        </div>
+        <div class="SubGrid3">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+        </div>
+        <div class="SubGrid4">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+            <div class="child" id="child10">10</div>
+            <div class="child" id="child11">11</div>
+        </div>
+        <div class="SubGrid5">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+            <div class="child" id="child10">10</div>
+        </div>
+        <div class="SubGrid6">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+        </div>
+        <div class="SubGrid7">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+        </div>
+        <div class="SubGrid8">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+        </div>
+        <div class="SubGrid9">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+        </div>
+        <div class="SubGrid10">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+            <div class="child" id="child10">10</div>
+            <div class="child" id="child11">11</div>
+        </div>
+        <div class="SubGrid11">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+            <div class="child" id="child10">10</div>
+            <div class="child" id="child11">11</div>
+            <div class="child" id="child12">12</div>
+        </div>
+        <div class="SubGrid12">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+        </div>
+        <div class="SubGrid13">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+        </div>
+        <div class="SubGrid14">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+        </div>
+        <div class="SubGrid15">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+        </div>
+        <div class="SubGrid16">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+            <div class="child" id="child10">10</div>
+            <div class="child" id="child11">11</div>
+            <div class="child" id="child12">12</div>
+        </div>
+        <div class="SubGrid17">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+            <div class="child" id="child10">10</div>
+            <div class="child" id="child11">11</div>
+            <div class="child" id="child12">12</div>
+            <div class="child" id="child11">13</div>
+            <div class="child" id="child12">14</div>
+        </div>
+        <div class="SubGrid18">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+        </div>
+        <div class="SubGrid19">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+        </div>
+        <div class="SubGrid20">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+        </div>
+        <div class="SubGrid21">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+        </div>
+        <div class="SubGrid22">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+            <div class="child" id="child10">10</div>
+            <div class="child" id="child11">11</div>
+            <div class="child" id="child12">12</div>
+        </div>
+        <div class="SubGrid23">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+            <div class="child" id="child10">10</div>
+            <div class="child" id="child11">11</div>
+            <div class="child" id="child12">12</div>
+        </div>
+        <div class="SubGrid24">
+            <div class="child" id="child1">1</div>
+            <div class="child" id="child2">2</div>
+            <div class="child" id="child3">3</div>
+            <div class="child" id="child4">4</div>
+            <div class="child" id="child5">5</div>
+            <div class="child" id="child6">6</div>
+            <div class="child" id="child7">7</div>
+            <div class="child" id="child8">8</div>
+            <div class="child" id="child9">9</div>
+        </div>
+    </div>
+</body>
+</html>

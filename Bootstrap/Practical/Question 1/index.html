@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Section</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="container mt-5">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              What is the purpose of this FAQ section?
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the first item’s accordion body.</strong> The FAQ section is designed to provide quick answers to common questions, helping users understand key concepts or resolve issues efficiently. It uses an accordion layout to keep information organized and accessible. You can modify the content with custom CSS or override default variables to suit your needs. Any HTML can be included in the <code>.accordion-body</code>, though transitions may limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              How do I customize the accordion's appearance?
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item’s accordion body.</strong> You can customize the accordion by overriding Bootstrap’s default CSS variables or adding custom CSS. For example, modify the <code>--bs-accordion-bg</code> variable for background color or adjust padding in the <code>.accordion-body</code>. Use Bootstrap’s documentation for a full list of customizable variables. Note that transitions may limit overflow content.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Can I add more accordion items?
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the third item’s accordion body.</strong> Yes, you can add more accordion items by following the same HTML structure. Ensure each item has a unique <code>id</code> for the collapse target and update the <code>data-bs-target</code> and <code>aria-controls</code> attributes accordingly. The Bootstrap collapse plugin will handle the show/hide functionality, but be mindful of overflow limitations.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              How does the accordion handle accessibility?
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the fourth item’s accordion body.</strong> Bootstrap’s accordion includes ARIA attributes like <code>aria-expanded</code> and <code>aria-controls</code> to ensure accessibility for screen readers. The <code>data-bs-parent</code> attribute ensures only one item is open at a time, improving navigation. Always test with assistive technologies to confirm compatibility and consider adding custom ARIA labels if needed.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              What browsers are supported by this accordion?
+            </button>
+          </h2>
+          <div
+            id="collapseFive"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the fifth item’s accordion body.</strong> The accordion, built with Bootstrap 5.3.3, supports modern browsers like Chrome, Firefox, Safari, Edge, and their mobile equivalents. Ensure you use the latest Bootstrap CDN links for optimal compatibility. For older browsers, consider adding polyfills or custom CSS to handle any rendering issues, keeping in mind transition limitations.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

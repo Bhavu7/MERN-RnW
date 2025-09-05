@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar with Dropdown</title>
+  <link rel="stylesheet" href="Q2.css" />
+  <link rel="shortcut icon" href="img/Logo1.png" type="image/x-icon" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="#" title="Logo">
+        <img src="img/Logo1.png" alt="Logo" />
+      </a>
+    </div>x
+
+    <!-- Navigation Links With Dropdown -->
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <!-- Services Dropdown -->
+      <li class="dropdown">
+        <a href="#">Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Mobile Apps</a></li>
+          <li><a href="#">UI/UX Design</a></li>
+        </ul>
+      </li>
+      <!-- About Dropdown -->
+      <li class="dropdown">
+        <a href="#">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <!-- Authentication Buttons -->
+    <div class="auth-buttons">
+      <a href="#" class="btn login-btn">Login</a>
+      <a href="#" class="btn signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>
