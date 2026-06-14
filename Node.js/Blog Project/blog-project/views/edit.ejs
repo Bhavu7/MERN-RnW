@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog</title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a href="/" class="logo">
+                Blog<span>Sphere</span>
+            </a>
+
+            <a href="/" class="btn">
+                Back
+            </a>
+
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="form-container">
+
+            <h1 class="form-title">
+                Edit Blog
+            </h1>
+
+            <form action="/edit/<%= blog._id %>?_method=PUT" method="POST">
+
+                <div class="form-group">
+                    <label>Blog Title</label>
+
+                    <input type="text" name="title" value="<%= blog.title %>" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Author Name</label>
+
+                    <input type="text" name="author" value="<%= blog.author %>" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+
+                    <input type="text" name="category" value="<%= blog.category %>" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Cover Image URL</label>
+
+                    <input type="text" name="image" value="<%= blog.image %>" id="imageInput" class="form-control">
+
+                    <img id="imagePreview" src="<%= blog.image %>" class="image-preview">
+                </div>
+
+                <div class="form-group">
+                    <label>Content</label>
+
+                    <textarea name="content" class="form-control textarea" required><%= blog.content %></textarea>
+                </div>
+
+                <div class="form-buttons">
+
+                    <button type="submit" class="btn">
+                        Update Blog
+                    </button>
+
+                    <a href="/blog/<%= blog._id %>" class="btn secondary-btn">
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        const imageInput =
+            document.getElementById("imageInput");
+
+        const preview =
+            document.getElementById("imagePreview");
+
+        imageInput.addEventListener("input", () => {
+
+            preview.src =
+                imageInput.value ||
+                "https://picsum.photos/1200/600";
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                Blog<span>Sphere</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="form-container">
+
+            <h1 style="margin-bottom:25px;">
+                Create New Blog
+            </h1>
+
+            <form action="/create" method="POST">
+
+                <div class="form-group">
+                    <label>Blog Title</label>
+
+                    <input type="text" name="title" class="form-control" placeholder="Enter blog title" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Author Name</label>
+
+                    <input type="text" name="author" class="form-control" placeholder="Enter author name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+
+                    <input type="text" name="category" class="form-control" placeholder="Technology">
+                </div>
+
+                <div class="form-group">
+                    <label>Cover Image URL</label>
+
+                    <input type="text" name="image" class="form-control" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label>Content</label>
+
+                    <textarea name="content" class="form-control" placeholder="Write your blog..." required></textarea>
+                </div>
+
+                <button class="btn">
+                    Publish Blog
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

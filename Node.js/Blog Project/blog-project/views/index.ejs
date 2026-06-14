@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BlogSphere</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                Blog<span>Sphere</span>
+            </a>
+
+            <a href="/create" class="btn">
+                Create Blog
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Share Your Ideas</h1>
+            <p>Create, edit and manage blogs beautifully.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="blog-grid">
+
+            <% blogs.forEach(blog=>{ %>
+
+                <div class="blog-card">
+
+                    <img src="<%= blog.image || 'https://picsum.photos/600/400' %>" class="blog-image"
+                        alt="<%= blog.title %>">
+
+                    <div class="blog-content">
+
+                        <span class="category">
+                            <%= blog.category %>
+                        </span>
+
+                        <h2 class="blog-title">
+                            <%= blog.title %>
+                        </h2>
+
+                        <p class="blog-meta">
+                            By <%= blog.author %>
+                        </p>
+
+                        <p class="blog-desc">
+                            <%= blog.content.substring(0,120) %>...
+                        </p>
+
+                        <a href="/blog/<%= blog._id %>" class="btn">
+                            Read More
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <% }) %>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= blog.title %>
+    </title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a href="/" class="logo">
+                Blog<span>Sphere</span>
+            </a>
+
+            <a href="/" class="btn">
+                All Blogs
+            </a>
+
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <article class="single-blog">
+
+            <img src="<%= blog.image && blog.image.trim() !== '' ? blog.image : 'https://picsum.photos/1200/600' %>"
+                alt="<%= blog.title %>" class="single-blog-image">
+
+            <div class="single-content">
+
+                <span class="category">
+                    <%= blog.category %>
+                </span>
+
+                <h1 class="single-title">
+                    <%= blog.title %>
+                </h1>
+
+                <div class="blog-info">
+
+                    <div>
+                        <strong>
+                            <%= blog.author %>
+                        </strong>
+                    </div>
+
+                    <div>
+                        <%= new Date(blog.createdAt).toDateString() %>
+                    </div>
+
+                </div>
+
+                <div class="divider"></div>
+
+                <p class="blog-text">
+                    <%= blog.content %>
+                </p>
+
+                <div class="action-buttons">
+
+                    <a href="/edit/<%= blog._id %>" class="btn">
+                        Edit Blog
+                    </a>
+
+                    <a href="/" class="btn secondary-btn">
+                        Back
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</body>
+
+</html>
