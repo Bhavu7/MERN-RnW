@@ -11,12 +11,13 @@
 
   <div class="detail-info">
     <h1><%= movie.title %></h1>
-    <p><strong>Director:</strong> <%= movie.director || "—" %></p>
-    <p><strong>Genre:</strong> <%= movie.genre || "—" %></p>
-    <p><strong>Year:</strong> <%= movie.year || "—" %></p>
-    <p><strong>Rating:</strong> ⭐ <%= movie.rating != null ? movie.rating : "—" %></p>
-    <p><strong>Description:</strong></p>
-    <p><%= movie.description || "No description." %></p>
+
+    <div class="info-row"><span class="label">Director</span><span class="value"><%= movie.director || "—" %></span></div>
+    <div class="info-row"><span class="label">Genre</span><span class="value"><%= movie.genre || "—" %></span></div>
+    <div class="info-row"><span class="label">Year</span><span class="value"><%= movie.year || "—" %></span></div>
+    <div class="info-row"><span class="label">Rating</span><span class="value"><span class="star">⭐</span> <%= movie.rating != null ? movie.rating : "—" %></span></div>
+
+    <p class="desc"><%= movie.description || "No description." %></p>
 
     <div class="actions">
       <a href="/movies/<%= movie._id %>/edit" class="btn">Edit</a>

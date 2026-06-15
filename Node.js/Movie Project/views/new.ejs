@@ -1,14 +1,20 @@
 <%- include("partials/header") %>
 
-<h1>Add Movie</h1>
+<div class="page-head center">
+  <h1>Add Movie</h1>
+</div>
 
 <!-- enctype is required so the poster file actually uploads -->
 <form action="/movies" method="POST" enctype="multipart/form-data" class="form">
   <label>Title <input type="text" name="title" required /></label>
-  <label>Director <input type="text" name="director" /></label>
-  <label>Genre <input type="text" name="genre" /></label>
-  <label>Year <input type="number" name="year" /></label>
-  <label>Rating (0-10) <input type="number" name="rating" step="0.1" min="0" max="10" /></label>
+  <div class="row">
+    <label>Director <input type="text" name="director" /></label>
+    <label>Genre <input type="text" name="genre" /></label>
+  </div>
+  <div class="row">
+    <label>Year <input type="number" name="year" /></label>
+    <label>Rating (0-10) <input type="number" name="rating" step="0.1" min="0" max="10" /></label>
+  </div>
   <label>Description <textarea name="description" rows="4"></textarea></label>
   <label>Poster <input type="file" name="poster" accept="image/*" /></label>
   <button type="submit" class="btn">Save Movie</button>

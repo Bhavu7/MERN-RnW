@@ -6,7 +6,7 @@ const multer = require("multer");
 const methodOverride = require("method-override");
 const path = require("path");
 const fs = require("fs");
-const Movie = require("./models/Movie");
+const movieController = require("./controllers/movieController");
 
 const app = express();
 
@@ -37,68 +37,15 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // ---------- Routes (CRUD) ----------
+// Each handler lives in controllers/movieController.js
 
-// READ: list all movies (home page)
-app.get("/", async (req, res) => {
-  const movies = await Movie.find().sort({ createdAt: -1 });
-  res.render("index", { movies });
-});
-
-// CREATE: show "add movie" form
-app.get("/movies/new", (req, res) => {
-  res.render("new");
-});
-
-// CREATE: handle form submit (poster file field = "poster")
-app.post("/movies", upload.single("poster"), async (req, res) => {
-  const data = req.body;
-  if (req.file) data.poster = req.file.filename; // save poster filename
-  await Movie.create(data);
-  res.redirect("/");
-});
-
-// READ: show single movie details
-app.get("/movies/:id", async (req, res) => {
-  const movie = await Movie.findById(req.params.id);
-  if (!movie) return res.redirect("/");
-  res.render("show", { movie });
-});
-
-// UPDATE: show "edit movie" form
-app.get("/movies/:id/edit", async (req, res) => {
-  const movie = await Movie.findById(req.params.id);
-  if (!movie) return res.redirect("/");
-  res.render("edit", { movie });
-});
-
-// UPDATE: handle edit submit
-app.put("/movies/:id", upload.single("poster"), async (req, res) => {
-  const data = req.body;
-  const movie = await Movie.findById(req.params.id);
-  if (!movie) return res.redirect("/");
-
-  if (req.file) {
-    // delete old poster file before saving the new one
-    if (movie.poster) {
-      const old = path.join(uploadDir, movie.poster);
-      if (fs.existsSync(old)) fs.unlinkSync(old);
-    }
-    data.poster = req.file.filename;
-  }
-
-  await Movie.findByIdAndUpdate(req.params.id, data);
-  res.redirect("/movies/" + req.params.id);
-});
-
-// DELETE: remove a movie (and its poster file)
-app.delete("/movies/:id", async (req, res) => {
-  const movie = await Movie.findByIdAndDelete(req.params.id);
-  if (movie && movie.poster) {
-    const file = path.join(uploadDir, movie.poster);
-    if (fs.existsSync(file)) fs.unlinkSync(file);
-  }
-  res.redirect("/");
-});
+app.get("/", movieController.index);                                  // list all movies
+app.get("/movies/new", movieController.newForm);                      // add-movie form
+app.post("/movies", upload.single("poster"), movieController.create); // create movie
+app.get("/movies/:id", movieController.show);                         // movie details
+app.get("/movies/:id/edit", movieController.editForm);                // edit-movie form
+app.put("/movies/:id", upload.single("poster"), movieController.update);   // update movie
+app.delete("/movies/:id", movieController.destroy);                   // delete movie
 
 // ---------- Start server ----------
 const PORT = process.env.PORT || 3000;

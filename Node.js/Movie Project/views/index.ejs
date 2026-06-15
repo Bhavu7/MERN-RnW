@@ -1,6 +1,9 @@
 <%- include("partials/header") %>
 
-<h1>All Movies</h1>
+<div class="page-head">
+  <h1>All Movies</h1>
+  <span class="count"><%= movies.length %> title<%= movies.length === 1 ? "" : "s" %></span>
+</div>
 
 <!-- show message when there are no movies yet -->
 <% if (movies.length === 0) { %>
@@ -11,17 +14,21 @@
     <% movies.forEach(movie => { %>
       <div class="card">
         <a href="/movies/<%= movie._id %>">
-          <% if (movie.poster) { %>
-            <img src="/uploads/<%= movie.poster %>" alt="<%= movie.title %>" />
-          <% } else { %>
-            <div class="no-poster">No Poster</div>
-          <% } %>
+          <div class="poster-wrap">
+            <% if (movie.poster) { %>
+              <img src="/uploads/<%= movie.poster %>" alt="<%= movie.title %>" />
+            <% } else { %>
+              <div class="no-poster">No Poster</div>
+            <% } %>
+            <% if (movie.rating != null) { %>
+              <span class="rating-badge">⭐ <%= movie.rating %></span>
+            <% } %>
+          </div>
+          <div class="card-body">
+            <h3><%= movie.title %></h3>
+            <p class="meta"><%= movie.genre || "—" %> · <%= movie.year || "—" %></p>
+          </div>
         </a>
-        <div class="card-body">
-          <h3><%= movie.title %></h3>
-          <p><%= movie.genre || "—" %> · <%= movie.year || "—" %></p>
-          <p>⭐ <%= movie.rating != null ? movie.rating : "—" %></p>
-        </div>
       </div>
     <% }) %>
   </div>
