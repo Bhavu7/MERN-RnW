@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+
+<div class="detail">
+  <div class="detail-poster">
+    <% if (movie.poster) { %>
+      <img src="/uploads/<%= movie.poster %>" alt="<%= movie.title %>" />
+    <% } else { %>
+      <div class="no-poster big">No Poster</div>
+    <% } %>
+  </div>
+
+  <div class="detail-info">
+    <h1><%= movie.title %></h1>
+    <p><strong>Director:</strong> <%= movie.director || "—" %></p>
+    <p><strong>Genre:</strong> <%= movie.genre || "—" %></p>
+    <p><strong>Year:</strong> <%= movie.year || "—" %></p>
+    <p><strong>Rating:</strong> ⭐ <%= movie.rating != null ? movie.rating : "—" %></p>
+    <p><strong>Description:</strong></p>
+    <p><%= movie.description || "No description." %></p>
+
+    <div class="actions">
+      <a href="/movies/<%= movie._id %>/edit" class="btn">Edit</a>
+      <!-- DELETE via method-override -->
+      <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Delete this movie?')">
+        <button type="submit" class="btn danger">Delete</button>
+      </form>
+      <a href="/" class="btn ghost">Back</a>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+
+<h1>Edit Movie</h1>
+
+<!-- method-override turns this POST into a PUT request -->
+<form action="/movies/<%= movie._id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="form">
+  <label>Title <input type="text" name="title" value="<%= movie.title %>" required /></label>
+  <label>Director <input type="text" name="director" value="<%= movie.director || '' %>" /></label>
+  <label>Genre <input type="text" name="genre" value="<%= movie.genre || '' %>" /></label>
+  <label>Year <input type="number" name="year" value="<%= movie.year || '' %>" /></label>
+  <label>Rating (0-10) <input type="number" name="rating" step="0.1" min="0" max="10" value="<%= movie.rating != null ? movie.rating : '' %>" /></label>
+  <label>Description <textarea name="description" rows="4"><%= movie.description || '' %></textarea></label>
+
+  <!-- show current poster, uploading a new one replaces it -->
+  <% if (movie.poster) { %>
+    <div class="current-poster">
+      <p>Current poster:</p>
+      <img src="/uploads/<%= movie.poster %>" alt="<%= movie.title %>" />
+    </div>
+  <% } %>
+  <label>Change Poster <input type="file" name="poster" accept="image/*" /></label>
+
+  <button type="submit" class="btn">Update Movie</button>
+</form>
+
+<%- include("partials/footer") %>

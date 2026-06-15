@@ -1,0 +1,30 @@
+<%- include("partials/header") %>
+
+<h1>All Movies</h1>
+
+<!-- show message when there are no movies yet -->
+<% if (movies.length === 0) { %>
+  <p class="empty">No movies yet. Click "Add Movie" to create one.</p>
+<% } else { %>
+  <div class="grid">
+    <!-- loop over every movie and show a card -->
+    <% movies.forEach(movie => { %>
+      <div class="card">
+        <a href="/movies/<%= movie._id %>">
+          <% if (movie.poster) { %>
+            <img src="/uploads/<%= movie.poster %>" alt="<%= movie.title %>" />
+          <% } else { %>
+            <div class="no-poster">No Poster</div>
+          <% } %>
+        </a>
+        <div class="card-body">
+          <h3><%= movie.title %></h3>
+          <p><%= movie.genre || "—" %> · <%= movie.year || "—" %></p>
+          <p>⭐ <%= movie.rating != null ? movie.rating : "—" %></p>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+<% } %>
+
+<%- include("partials/footer") %>

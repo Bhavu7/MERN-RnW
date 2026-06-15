@@ -1,0 +1,18 @@
+{
+  "name": "movie-project",
+  "version": "1.0.0",
+  "description": "CRUD app to manage movies with posters (Node, Express, MongoDB, EJS)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.4.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
