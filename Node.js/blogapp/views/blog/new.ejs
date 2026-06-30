@@ -1,0 +1,27 @@
+<!-- views/blog/new.ejs : create post form -->
+<div class="max-w-2xl mx-auto px-4 py-10">
+  <div class="bg-white rounded-2xl shadow-lg p-8 scale-in">
+    <h1 class="text-2xl font-bold mb-6">Write a New Post</h1>
+    <form action="/blog" method="POST" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Title</label>
+        <input type="text" name="title" required
+          class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-shadow duration-200" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Image URL (optional)</label>
+        <input type="url" name="image" placeholder="https://..."
+          class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-shadow duration-200" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Content</label>
+        <textarea name="content" rows="8" required
+          class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-shadow duration-200"></textarea>
+      </div>
+      <button type="submit"
+        class="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 hover:scale-[1.02] transition-all duration-200">
+        Publish Post
+      </button>
+    </form>
+  </div>
+</div>

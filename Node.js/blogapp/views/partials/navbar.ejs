@@ -1,0 +1,24 @@
+<!-- views/partials/navbar.ejs -->
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-4 flex items-center justify-between h-16">
+    <a href="/blog" class="text-xl font-bold text-indigo-600 hover:scale-105 transition-transform duration-200">
+      📝 BlogApp
+    </a>
+    <div class="flex items-center gap-4">
+      <% if (userId) { %>
+        <span class="hidden sm:inline text-sm text-gray-500">Hi, <%= userName %></span>
+        <a href="/blog/new" class="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition-colors duration-200">
+          + New Post
+        </a>
+        <form action="/logout?_method=POST" method="POST" class="inline">
+          <button class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-gray-100 transition-colors duration-200">
+            Logout
+          </button>
+        </form>
+      <% } else { %>
+        <a href="/login" class="px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors duration-200">Login</a>
+        <a href="/register" class="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition-colors duration-200">Register</a>
+      <% } %>
+    </div>
+  </div>
+</nav>

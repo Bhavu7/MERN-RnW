@@ -1,0 +1,13 @@
+<!-- views/partials/flash.ejs : displays success/error flash messages -->
+<div class="max-w-5xl mx-auto px-4 mt-4 space-y-2">
+  <% if (success && success.length) { %>
+    <div class="bg-green-100 text-green-700 px-4 py-3 rounded-lg slide-down">
+      <% success.forEach(msg => { %><p><%= msg %></p><% }) %>
+    </div>
+  <% } %>
+  <% if (error && error.length) { %>
+    <div class="bg-red-100 text-red-700 px-4 py-3 rounded-lg slide-down">
+      <% error.forEach(msg => { %><p><%= msg %></p><% }) %>
+    </div>
+  <% } %>
+</div>

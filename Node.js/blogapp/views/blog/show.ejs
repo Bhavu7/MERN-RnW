@@ -1,0 +1,68 @@
+<!-- views/blog/show.ejs : single post + comments section -->
+<div class="max-w-3xl mx-auto px-4 py-10">
+  <div class="bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+    <img src="<%= post.image %>" alt="<%= post.title %>" class="w-full h-64 object-cover" />
+    <div class="p-8">
+      <h1 class="text-3xl font-bold mb-3"><%= post.title %></h1>
+      <div class="flex items-center gap-2 mb-6">
+        <img src="<%= post.author.avatar %>" class="w-8 h-8 rounded-full" />
+        <span class="text-sm text-gray-500"><%= post.author.name %> · <%= post.createdAt.toDateString() %></span>
+      </div>
+      <p class="text-gray-700 whitespace-pre-line leading-relaxed"><%= post.content %></p>
+
+      <% if (userId && post.author._id.toString() === userId.toString()) { %>
+        <div class="flex gap-3 mt-6">
+          <a href="/blog/<%= post._id %>/edit"
+            class="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 text-sm font-medium hover:bg-indigo-50 transition-colors duration-200">
+            Edit
+          </a>
+          <form action="/blog/<%= post._id %>?_method=DELETE" method="POST"
+            onsubmit="return confirm('Delete this post?');">
+            <button class="px-4 py-2 rounded-lg border border-red-500 text-red-500 text-sm font-medium hover:bg-red-50 transition-colors duration-200">
+              Delete
+            </button>
+          </form>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Comments -->
+  <div id="comments" class="mt-10">
+    <h2 class="text-xl font-bold mb-4">Comments (<%= comments.length %>)</h2>
+
+    <% if (userId) { %>
+      <form action="/blog/<%= post._id %>/comments" method="POST" class="flex gap-3 mb-6">
+        <input type="text" name="text" placeholder="Write a comment..." required
+          class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-shadow duration-200" />
+        <button type="submit"
+          class="px-5 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors duration-200">
+          Post
+        </button>
+      </form>
+    <% } else { %>
+      <p class="text-sm text-gray-500 mb-6"><a href="/login" class="text-indigo-600 hover:underline">Login</a> to leave a comment.</p>
+    <% } %>
+
+    <div class="space-y-4">
+      <% comments.forEach((c, i) => { %>
+        <div class="bg-white rounded-xl shadow-sm p-4 flex gap-3 fade-in" style="animation-delay: <%= i * 50 %>ms">
+          <img src="<%= c.author.avatar %>" class="w-8 h-8 rounded-full" />
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-medium"><%= c.author.name %></span>
+              <span class="text-xs text-gray-400"><%= c.createdAt.toDateString() %></span>
+            </div>
+            <p class="text-gray-700 text-sm mt-1"><%= c.text %></p>
+          </div>
+          <% if (userId && c.author._id.toString() === userId.toString()) { %>
+            <form action="/blog/<%= post._id %>/comments/<%= c._id %>?_method=DELETE" method="POST"
+              onsubmit="return confirm('Delete this comment?');">
+              <button class="text-xs text-red-400 hover:text-red-600 transition-colors duration-200">✕</button>
+            </form>
+          <% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
