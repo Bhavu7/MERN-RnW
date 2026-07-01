@@ -1,0 +1,65 @@
+<%- include('../partials/head', { title }) %>
+  <%- include('../partials/navbar') %>
+
+    <main class="page-shell">
+      <div class="container page-stack">
+        <section class="hero-panel glass reveal">
+          <div>
+            <div class="brand-badge">Admin Only</div>
+            <h1>Categories</h1>
+            <p class="muted-text">Create task categories and keep all multiuser tasks organized with clean admin
+              control.</p>
+          </div>
+        </section>
+
+        <section class="category-page">
+          <div class="glass category-form-card reveal">
+            <h2>Add Category</h2>
+            <form action="/categories/create" method="POST" class="stack-lg">
+              <div class="field">
+                <label>Name</label>
+                <input class="input" type="text" name="name" placeholder="Enter category name" required>
+              </div>
+
+              <div class="field">
+                <label>Description</label>
+                <textarea class="input textarea-input small-textarea" name="description"
+                  placeholder="Write short description"></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Create Category</button>
+            </form>
+          </div>
+
+          <div class="category-grid">
+            <% if (!categories.length) { %>
+              <div class="glass empty-state reveal">
+                <h2>No categories yet</h2>
+                <p class="muted-text">Add a category to start grouping tasks cleanly.</p>
+              </div>
+              <% } %>
+
+                <% categories.forEach(category=> { %>
+                  <article class="glass category-card reveal">
+                    <div>
+                      <h3>
+                        <%= category.name %>
+                      </h3>
+                      <p class="muted-text">
+                        <%= category.description || 'No description provided.' %>
+                      </p>
+                    </div>
+
+                    <form action="/categories/<%= category._id %>/delete" method="POST" data-confirm
+                      data-confirm-title="Delete category?"
+                      data-confirm-message="This category will be deleted permanently.">
+                      <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                  </article>
+                  <% }) %>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>

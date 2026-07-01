@@ -1,0 +1,38 @@
+<%- include('../partials/head', { title }) %>
+<div class="auth-page">
+  <div class="auth-card glass">
+    <div class="auth-header">
+      <div class="brand-badge">Workly</div>
+      <h1>Create account</h1>
+      <p class="muted-text">Exam-ready EJS app with JWT cookies, roles, navbar, populate, and protected routes.</p>
+    </div>
+    <%- include('../partials/flash') %>
+    <form action="/register" method="POST" class="stack-lg">
+      <div class="field">
+        <label>Username</label>
+        <input class="input" type="text" name="username" placeholder="Enter username" required>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input class="input" type="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input class="input" type="password" name="password" placeholder="Enter password" required>
+      </div>
+      <div class="field">
+        <label>Role</label>
+        <div class="select-wrap">
+          <select class="input custom-select" name="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <span class="select-icon">⌄</span>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Register</button>
+    </form>
+    <p class="auth-switch">Already have an account? <a href="/login">Login</a></p>
+  </div>
+</div>
+<%- include('../partials/footer') %>

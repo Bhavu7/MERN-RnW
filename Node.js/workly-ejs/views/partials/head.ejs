@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %> | Workly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body data-flash='<%- JSON.stringify(flash || null) %>'>
+  <div id="toastContainer" class="toast-container"></div>
+  <div id="confirmModal" class="modal-overlay">
+    <div class="modal-card glass">
+      <div class="modal-badge">Confirmation</div>
+      <h2 id="confirmModalTitle">Please confirm</h2>
+      <p id="confirmModalText" class="muted-text">Are you sure you want to continue?</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" data-modal-cancel>Cancel</button>
+        <button type="button" class="btn btn-primary" id="confirmModalConfirm">Yes, continue</button>
+      </div>
+    </div>
+  </div>

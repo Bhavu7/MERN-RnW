@@ -1,0 +1,9 @@
+<%- include('head', { title: title || 'Error' }) %>
+<div class="auth-page">
+  <div class="auth-card glass centered-card">
+    <h1><%= title %></h1>
+    <p class="muted-text"><%= message %></p>
+    <a href="/tasks" class="btn btn-primary">Go Back</a>
+  </div>
+</div>
+<%- include('footer') %>

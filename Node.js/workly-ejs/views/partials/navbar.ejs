@@ -1,0 +1,33 @@
+<header class="navbar glass sticky-bar">
+  <div class="container nav-inner">
+    <a href="/tasks" class="brand-link">
+      <div class="brand-mark">
+        <img src="/images/logo.png" alt="Workly logo" class="brand-logo" />
+      </div>
+      <div>
+        <p class="brand-title">Workly</p>
+        <p class="brand-subtitle">Task management workspace</p>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="/tasks" class="nav-pill <%= title === 'My Tasks' ? 'active' : '' %>">My Tasks</a>
+      <% if (currentUser && currentUser.role === 'admin') { %>
+        <a href="/tasks/all" class="nav-pill <%= title === 'All User Tasks' ? 'active' : '' %>">All User Tasks</a>
+        <a href="/categories" class="nav-pill <%= title === 'Categories' ? 'active' : '' %>">Categories</a>
+      <% } %>
+    </nav>
+
+    <div class="nav-user">
+      <% if (currentUser) { %>
+        <div class="user-chip">
+          <span class="user-name"><%= currentUser.username %></span>
+          <span class="user-role"><%= currentUser.role %></span>
+        </div>
+        <form action="/logout" method="POST" data-confirm data-confirm-title="Sign out from Workly?" data-confirm-message="Your current session will be closed safely.">
+          <button class="btn btn-secondary" type="submit">Sign Out</button>
+        </form>
+      <% } %>
+    </div>
+  </div>
+</header>

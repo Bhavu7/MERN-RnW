@@ -1,0 +1,36 @@
+<%- include('../partials/head', { title }) %>
+<%- include('../partials/navbar') %>
+<main class="page-shell">
+  <div class="container page-stack">
+    <section class="hero-panel glass reveal">
+      <div>
+        <div class="brand-badge"><%= pageType === 'all' ? 'Admin View' : 'Personal Workspace' %></div>
+        <h1><%= title %></h1>
+        <p class="muted-text">Smooth exam-ready interface with JWT cookies, protected routes, role-based access, multiuser tasks, and populate support.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="/tasks/create" class="btn btn-primary">Add Task</a>
+        <% if (currentUser && currentUser.role === 'admin') { %>
+          <a href="/categories" class="btn btn-secondary">Manage Categories</a>
+        <% } %>
+      </div>
+    </section>
+
+    <%- include('../partials/flash') %>
+
+    <% if (!tasks.length) { %>
+      <section class="empty-state glass reveal">
+        <h2>No tasks available</h2>
+        <p class="muted-text">Create your first task to start managing work smoothly inside Workly.</p>
+        <a href="/tasks/create" class="btn btn-primary">Create Task</a>
+      </section>
+    <% } else { %>
+      <section class="tasks-grid">
+        <% tasks.forEach(task => { %>
+          <%- include('taskItem', { task }) %>
+        <% }) %>
+      </section>
+    <% } %>
+  </div>
+</main>
+<%- include('../partials/footer') %>

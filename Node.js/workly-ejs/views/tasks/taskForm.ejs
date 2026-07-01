@@ -1,0 +1,153 @@
+<%- include('../partials/head', { title }) %>
+  <%- include('../partials/navbar') %>
+
+    <main class="page-shell compact-form-page">
+      <div class="container form-page">
+        <section class="form-card compact-form-card glass reveal">
+          <div class="form-head compact-form-head">
+            <div>
+              <div class="brand-badge">
+                <%= task ? 'Update Task' : 'Create Task' %>
+              </div>
+              <h1>
+                <%= title %>
+              </h1>
+              <p class="muted-text">Clean, smooth, and role-aware form with custom themed inputs and compact spacing.
+              </p>
+            </div>
+            <a href="/tasks" class="btn btn-secondary">Back</a>
+          </div>
+
+          <form action="<%= action %>" method="POST" class="task-form compact-task-form">
+            <div class="field">
+              <label>Task Title</label>
+              <input class="input" type="text" name="title" value="<%= task ? task.title : '' %>"
+                placeholder="Enter task title" required>
+            </div>
+
+            <div class="field">
+              <label>Description</label>
+              <textarea class="input textarea-input compact-textarea" name="description"
+                placeholder="Add task details"><%= task ? task.description : '' %></textarea>
+            </div>
+
+            <div class="form-grid compact-form-grid">
+              <div class="field">
+                <label>Status</label>
+                <div class="custom-select-wrapper">
+                  <select class="native-hidden-select" name="status">
+                    <% ['Pending', 'In Progress' , 'Completed' ].forEach(item=> { %>
+                      <option value="<%= item %>" <%=task && task.status===item ? 'selected' : (!task &&
+                        item==='Pending' ) ? 'selected' : '' %>><%= item %>
+                      </option>
+                      <% }) %>
+                  </select>
+                  <button type="button" class="custom-select-trigger input">
+                    <span class="custom-select-value">Select status</span>
+                    <span class="select-icon">⌄</span>
+                  </button>
+                  <div class="custom-select-menu glass">
+                    <% ['Pending', 'In Progress' , 'Completed' ].forEach(item=> { %>
+                      <button type="button" class="custom-option" data-value="<%= item %>">
+                        <%= item %>
+                      </button>
+                      <% }) %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Priority</label>
+                <div class="custom-select-wrapper">
+                  <select class="native-hidden-select" name="priority">
+                    <% ['Low', 'Medium' , 'High' ].forEach(item=> { %>
+                      <option value="<%= item %>" <%=task && task.priority===item ? 'selected' : (!task &&
+                        item==='Medium' ) ? 'selected' : '' %>><%= item %>
+                      </option>
+                      <% }) %>
+                  </select>
+                  <button type="button" class="custom-select-trigger input">
+                    <span class="custom-select-value">Select priority</span>
+                    <span class="select-icon">⌄</span>
+                  </button>
+                  <div class="custom-select-menu glass">
+                    <% ['Low', 'Medium' , 'High' ].forEach(item=> { %>
+                      <button type="button" class="custom-option" data-value="<%= item %>">
+                        <%= item %>
+                      </button>
+                      <% }) %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Due Date</label>
+                <input class="input date-input" type="date" name="dueDate"
+                  value="<%= task && task.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : '' %>">
+              </div>
+
+              <div class="field">
+                <label>Category</label>
+                <div class="custom-select-wrapper">
+                  <select class="native-hidden-select" name="category">
+                    <option value="">Select category</option>
+                    <% categories.forEach(category=> { %>
+                      <option value="<%= category._id %>" <%=task && task.category &&
+                        String(task.category)===String(category._id) ? 'selected' : '' %>><%= category.name %>
+                      </option>
+                      <% }) %>
+                  </select>
+                  <button type="button" class="custom-select-trigger input">
+                    <span class="custom-select-value">Select category</span>
+                    <span class="select-icon">⌄</span>
+                  </button>
+                  <div class="custom-select-menu glass">
+                    <button type="button" class="custom-option" data-value="">Select category</button>
+                    <% categories.forEach(category=> { %>
+                      <button type="button" class="custom-option" data-value="<%= category._id %>">
+                        <%= category.name %>
+                      </button>
+                      <% }) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <% if (currentUser && currentUser.role==='admin' ) { %>
+              <div class="field">
+                <label>Assign To</label>
+                <div class="custom-select-wrapper">
+                  <select class="native-hidden-select" name="assignedTo">
+                    <% users.forEach(user=> { %>
+                      <option value="<%= user._id %>" <%=task && String(task.assignedTo)===String(user._id) ? 'selected'
+                        : (!task && String(user._id)===String(currentUser._id)) ? 'selected' : '' %>><%= user.username
+                          %> (<%= user.role %>)</option>
+                      <% }) %>
+                  </select>
+                  <button type="button" class="custom-select-trigger input">
+                    <span class="custom-select-value">Select user</span>
+                    <span class="select-icon">⌄</span>
+                  </button>
+                  <div class="custom-select-menu glass">
+                    <% users.forEach(user=> { %>
+                      <button type="button" class="custom-option" data-value="<%= user._id %>">
+                        <%= user.username %> (<%= user.role %>)
+                      </button>
+                      <% }) %>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+
+                <div class="form-actions">
+                  <button class="btn btn-primary" type="submit">
+                    <%= submitText %>
+                  </button>
+                  <a href="/tasks" class="btn btn-secondary">Cancel</a>
+                </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>

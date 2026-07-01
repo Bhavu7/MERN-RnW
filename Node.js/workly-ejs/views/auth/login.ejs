@@ -1,0 +1,24 @@
+<%- include('../partials/head', { title }) %>
+<div class="auth-page">
+  <div class="auth-card glass">
+    <div class="auth-header">
+      <div class="brand-badge">Workly</div>
+      <h1>Welcome back</h1>
+      <p class="muted-text">JWT cookie auth, role-based access, and multiuser task management.</p>
+    </div>
+    <%- include('../partials/flash') %>
+    <form action="/login" method="POST" class="stack-lg">
+      <div class="field">
+        <label>Email</label>
+        <input class="input" type="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input class="input" type="password" name="password" placeholder="Enter password" required>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Login</button>
+    </form>
+    <p class="auth-switch">New here? <a href="/register">Create account</a></p>
+  </div>
+</div>
+<%- include('../partials/footer') %>

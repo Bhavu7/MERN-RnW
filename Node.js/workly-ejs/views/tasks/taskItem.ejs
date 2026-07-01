@@ -1,0 +1,24 @@
+<article class="task-card glass reveal">
+  <div class="task-card-top">
+    <div>
+      <h3><%= task.title %></h3>
+      <p class="muted-text"><%= task.description || 'No description added yet.' %></p>
+    </div>
+    <span class="badge priority-<%= task.priority.toLowerCase().replace(' ', '-') %>"><%= task.priority %></span>
+  </div>
+
+  <div class="task-meta-grid">
+    <div><span class="meta-label">Status</span><strong><%= task.status %></strong></div>
+    <div><span class="meta-label">Category</span><strong><%= task.category ? task.category.name : 'Uncategorized' %></strong></div>
+    <div><span class="meta-label">Assigned To</span><strong><%= task.assignedTo ? task.assignedTo.username : 'Unknown' %></strong></div>
+    <div><span class="meta-label">Created By</span><strong><%= task.createdBy ? task.createdBy.username : 'Unknown' %></strong></div>
+    <div><span class="meta-label">Due Date</span><strong><%= task.dueDate ? new Date(task.dueDate).toLocaleDateString() : 'Not set' %></strong></div>
+  </div>
+
+  <div class="task-actions">
+    <a href="/tasks/<%= task._id %>/edit" class="btn btn-secondary">Edit</a>
+    <form action="/tasks/<%= task._id %>/delete" method="POST" data-confirm data-confirm-title="Delete task?" data-confirm-message="This task will be removed permanently from Workly.">
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+</article>
