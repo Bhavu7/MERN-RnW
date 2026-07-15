@@ -1,4 +1,4 @@
-# Task Management App - Practical Exam Project
+# Workly - Task Management App - Practical Exam Project
 
 A full-stack MERN task management application with JWT authentication using cookies, role-based access, multi-user task support, category/task populate, smooth React + Tailwind UI, toaster notifications, and MVC backend structure.
 
